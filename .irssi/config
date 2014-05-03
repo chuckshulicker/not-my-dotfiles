@@ -1,0 +1,398 @@
+servers = (
+  {
+    address = "irc.freenode.net";
+    autoconnect = "yes";
+    chatnet = "fn";
+    port = "7000";
+    use_ssl = "yes";
+  },
+  {
+    address = "biostat.mc.vanderbilt.edu";
+    chatnet = "bio";
+    port = "37222";
+    use_ssl = "no";
+    ssl_verify = "no";
+  }
+);
+
+chatnets = {
+  bio = { type = "XMPP"; nick = "graywh@biostat.mc.vanderbilt.edu"; };
+  fn = {
+    type = "IRC";
+    autosendcmd = "/quote monitor + viking,biagidp; /umode +R";
+  };
+};
+
+channels = ( { name = "#vim"; chatnet = "fn"; autojoin = "yes"; } );
+
+aliases = {
+  J = "join";
+  DATE = "time";
+  HOST = "userhost";
+  LAST = "lastlog";
+  SAY = "msg *";
+  WI = "whois";
+  WII = "whois $0 $0";
+  WW = "whowas";
+  SB = "scrollback";
+  UMODE = "mode $N";
+  WC = "window close";
+  WN = "window new hide";
+  GOTO = "sb goto";
+  CHAT = "dcc chat";
+  RUN = "script load";
+  EXEMPTLIST = "mode $C +e";
+  UNBIND = "bind -delete";
+  NS = "msg nickserv";
+  CS = "msg chanserv";
+  OP = "msg chanserv op $C";
+  DEOP = "msg chanserv deop $C";
+  MONITOR = "quote monitor $-";
+  DOESNTWORK = "say vimgor, tell $0 doesn't work";
+};
+
+statusbar = {
+  # formats:
+  # when using {templates}, the template is shown only if it's argument isn't
+  # empty unless no argument is given. for example {sb} is printed always,
+  # but {sb $T} is printed only if $T isn't empty.
+
+  items = {
+    # start/end text in statusbars
+    barstart = "{sbstart}";
+    barend = "{sbend}";
+
+    topicbarstart = "{topicsbstart}";
+    topicbarend = "{topicsbend}";
+
+    # treated "normally", you could change the time/user name to whatever
+    time = "{sb $Z}";
+    user = "{sb {sbnickmode $cumode}$N{sbmode $usermode}{sbaway $A}}";
+
+    # treated specially .. window is printed with non-empty windows,
+    # window_empty is printed with empty windows
+    window = "{sb $winref:$tag/$itemname{sbmode $M}}";
+    window_empty = "{sb $winref{sbservertag $tag}}";
+    prompt = "{prompt $[.15]itemname}";
+    prompt_empty = "{prompt $winname}";
+    topic = " $topic";
+    topic_empty = " Irssi v$J - http://irssi.org/help/";
+
+    # all of these treated specially, they're only displayed when needed
+    lag = "{sb Lag: $0-}";
+    act = "{sb Act: $0-}";
+    more = "-- more --";
+  };
+
+  # there's two type of statusbars. root statusbars are either at the top
+  # of the screen or at the bottom of the screen. window statusbars are at
+  # the top/bottom of each split window in screen.
+  default = {
+    # the "default statusbar" to be displayed at the bottom of the window.
+    # contains all the normal items.
+    window = {
+      disabled = "no";
+
+      # window, root
+      type = "window";
+      # top, bottom
+      placement = "bottom";
+      # number
+      position = "1";
+      # active, inactive, always
+      visible = "active";
+
+      # list of items in statusbar in the display order
+      items = {
+        barstart = { priority = "100"; };
+        time = { };
+        user = { };
+        window = { };
+        window_empty = { };
+        lag = { priority = "-1"; };
+        act = { priority = "10"; };
+        more = { priority = "-1"; alignment = "right"; };
+        xmpp_composing = { alignment = "right"; };
+        usercount = { alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    # statusbar to use in inactive split windows
+    window_inact = {
+      type = "window";
+      placement = "bottom";
+      position = "1";
+      visible = "inactive";
+      items = {
+        barstart = { priority = "100"; };
+        window = { };
+        window_empty = { };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    # we treat input line as yet another statusbar :) It's possible to
+    # add other items before or after the input line item.
+    prompt = {
+      type = "root";
+      placement = "bottom";
+      # we want to be at the bottom always
+      position = "100";
+      visible = "always";
+      items = {
+        prompt = { priority = "-1"; };
+        prompt_empty = { priority = "-1"; };
+        # treated specially, this is the real input line.
+        input = { priority = "10"; };
+      };
+    };
+
+    # topicbar
+    topic = {
+      type = "root";
+      placement = "top";
+      position = "1";
+      visible = "always";
+      items = {
+        topicbarstart = { priority = "100"; };
+        topic = { };
+        topic_empty = { };
+        topicbarend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
+settings = {
+  core = {
+    real_name = "Will Gray";
+    user_name = "graywh";
+    nick = "graywh";
+    timestamp_format = "%H:%M";
+    log_timestamp = "%H:%M:%S ";
+  };
+  "fe-text" = { actlist_sort = "refnum"; };
+  "fe-common/core" = {
+    use_status_window = "no";
+    autocreate_query_level = "msgs dccmsgs";
+    autoclose_windows = "no";
+    reuse_unused_windows = "yes";
+    completion_char = ",";
+    completion_auto = "no";
+    window_history = "yes";
+    beep_when_away = "no";
+    windows_auto_renumber = "no";
+    show_nickmode_empty = "no";
+    show_names_on_join = "no";
+    hilight_color = "%W";
+    autolog_path = "~/.irssi/logs/$tag/$0/%Y%m%d.log";
+    autolog = "yes";
+    autolog_level = "all -crap -clientcrap -ctcps -nicks";
+    autocreate_own_query = "yes";
+    term_charset = "UTF-8";
+  };
+  "xmpp/core" = {
+    xmpp_set_nick_as_username = "yes";
+    roster_show_offline = "no";
+  };
+  "irc/core" = { alternate_nick = "graywh_"; };
+  "perl/core/scripts" = { usercount_show_zero = "no"; };
+};
+hilights = ( { text = "graywh"; nick = "yes"; } );
+windows = {
+  1 = { name = "hilight"; sticky = "yes"; };
+  2 = {
+    items = (
+      { type = "CHANNEL"; chat_type = "IRC"; name = "#vim"; tag = "fn"; }
+    );
+    sticky = "yes";
+  };
+};
+mainwindows = {
+  1 = { first_line = "1"; lines = "4"; };
+  2 = { first_line = "6"; lines = "17"; };
+};
+notifies = { };
+ignores = ( { level = "JOINS PARTS QUITS"; } );
+logs = { };
+keyboard = (
+  { key = "^B"; id = "key"; data = "home"; },
+  { key = "^E"; id = "key"; data = "end"; },
+  { key = "^F"; id = "key"; data = "right"; },
+  { key = "^H"; id = "key"; data = "left"; },
+  { key = "^N"; id = "forward_history"; data = ""; },
+  { key = "^O"; id = "active_window"; data = ""; },
+  { key = "^P"; id = "backward_history"; data = ""; },
+  { key = "^V"; id = "escape_char"; data = ""; },
+  { key = "^^"; id = "command"; data = "window last"; },
+  { key = "insert"; id = "escape_character"; data = ""; },
+  # special
+  { key = "meta2-Z"; id = "key"; data = "stab"; },
+  # normal
+  { key = "meta2-A"; id = "key"; data = "up"; },
+  { key = "meta2-B"; id = "key"; data = "down"; },
+  { key = "meta2-C"; id = "key"; data = "right"; },
+  { key = "meta2-D"; id = "key"; data = "left"; },
+  { key = "meta2-1~"; id = "key"; data = "home"; },
+  { key = "meta2-2~"; id = "key"; data = "insert"; },
+  { key = "meta2-3~"; id = "key"; data = "delete"; },
+  { key = "meta2-4~"; id = "key"; data = "end"; },
+  { key = "meta2-5~"; id = "key"; data = "prior"; },
+  { key = "meta2-6~"; id = "key"; data = "next"; },
+  { key = "meta2-27;1;9~"; id = "key"; data = "tab"; },
+  # shift
+  { key = "meta2-1;2A"; id = "key"; data = "sup"; },
+  { key = "meta2-1;2B"; id = "key"; data = "sdown"; },
+  { key = "meta2-1;2C"; id = "key"; data = "sright"; },
+  { key = "meta2-1;2D"; id = "key"; data = "sleft"; },
+  { key = "meta2-1;2H"; id = "key"; data = "shome"; },
+  { key = "meta2-2;2~"; id = "key"; data = "sinsert"; },
+  { key = "meta2-3;2~"; id = "key"; data = "sdelete"; },
+  { key = "meta2-1;2F"; id = "key"; data = "send"; },
+  { key = "meta2-5;2~"; id = "key"; data = "sprior"; },
+  { key = "meta2-6;2~"; id = "key"; data = "snext"; },
+  { key = "meta2-27;2;9~"; id = "key"; data = "stab"; },
+  { key = "sup"; id = "nothing"; data = ""; },
+  { key = "sdown"; id = "nothing"; data = ""; },
+  { key = "sright"; id = "nothing"; data = ""; },
+  { key = "sleft"; id = "nothing"; data = ""; },
+  { key = "shome"; id = "nothing"; data = ""; },
+  { key = "sinsert"; id = "nothing"; data = ""; },
+  { key = "sdelete"; id = "nothing"; data = ""; },
+  { key = "send"; id = "nothing"; data = ""; },
+  { key = "sprior"; id = "nothing"; data = ""; },
+  { key = "snext"; id = "nothing"; data = ""; },
+  { key = "stab"; id = "nothing"; data = ""; },
+  # meta/alt
+  { key = "meta2-1;3A"; id = "key"; data = "mup"; },
+  { key = "meta2-1;3B"; id = "key"; data = "mdown"; },
+  { key = "meta2-1;3C"; id = "key"; data = "mright"; },
+  { key = "meta2-1;3D"; id = "key"; data = "mleft"; },
+  { key = "meta2-1;3H"; id = "key"; data = "mhome"; },
+  { key = "meta2-2;3~"; id = "key"; data = "minsert"; },
+  { key = "meta2-3;3~"; id = "key"; data = "mdelete"; },
+  { key = "meta2-1;3F"; id = "key"; data = "mend"; },
+  { key = "meta2-5;3~"; id = "key"; data = "mprior"; },
+  { key = "meta2-6;3~"; id = "key"; data = "mnext"; },
+  { key = "meta2-27;3;9~"; id = "key"; data = "mtab"; },
+  { key = "mhome"; id = "nothing"; data = ""; },
+  { key = "minsert"; id = "nothing"; data = ""; },
+  { key = "mdelete"; id = "nothing"; data = ""; },
+  { key = "mend"; id = "nothing"; data = ""; },
+  { key = "mprior"; id = "nothing"; data = ""; },
+  { key = "mnext"; id = "nothing"; data = ""; },
+  { key = "mtab"; id = "nothing"; data = ""; },
+  # shift + meta/alt
+  { key = "meta2-1;4A"; id = "key"; data = "smup"; },
+  { key = "meta2-1;4B"; id = "key"; data = "smdown"; },
+  { key = "meta2-1;4C"; id = "key"; data = "smright"; },
+  { key = "meta2-1;4D"; id = "key"; data = "smleft"; },
+  { key = "meta2-1;4H"; id = "key"; data = "smhome"; },
+  { key = "meta2-2;4~"; id = "key"; data = "sminsert"; },
+  { key = "meta2-3;4~"; id = "key"; data = "smdelete"; },
+  { key = "meta2-1;4F"; id = "key"; data = "smend"; },
+  { key = "meta2-5;4~"; id = "key"; data = "smprior"; },
+  { key = "meta2-6;4~"; id = "key"; data = "smnext"; },
+  { key = "meta2-27;4;9~"; id = "key"; data = "smtab"; },
+  { key = "smup"; id = "nothing"; data = ""; },
+  { key = "smdown"; id = "nothing"; data = ""; },
+  { key = "smright"; id = "nothing"; data = ""; },
+  { key = "smleft"; id = "nothing"; data = ""; },
+  { key = "smhome"; id = "nothing"; data = ""; },
+  { key = "sminsert"; id = "nothing"; data = ""; },
+  { key = "smdelete"; id = "nothing"; data = ""; },
+  { key = "smend"; id = "nothing"; data = ""; },
+  { key = "smprior"; id = "nothing"; data = ""; },
+  { key = "smnext"; id = "nothing"; data = ""; },
+  { key = "smtab"; id = "nothing"; data = ""; },
+  # ctrl
+  { key = "meta2-1;5A"; id = "key"; data = "cup"; },
+  { key = "meta2-1;5B"; id = "key"; data = "cdown"; },
+  { key = "meta2-1;5C"; id = "key"; data = "cright"; },
+  { key = "meta2-1;5D"; id = "key"; data = "cleft"; },
+  { key = "meta2-1;5H"; id = "key"; data = "chome"; },
+  { key = "meta2-2;5~"; id = "key"; data = "cinsert"; },
+  { key = "meta2-3;5~"; id = "key"; data = "cdelete"; },
+  { key = "meta2-1;5F"; id = "key"; data = "cend"; },
+  { key = "meta2-5;5~"; id = "key"; data = "cprior"; },
+  { key = "meta2-6;5~"; id = "key"; data = "cnext"; },
+  { key = "meta2-27;5;9~"; id = "key"; data = "ctab"; },
+  { key = "cup"; id = "nothing"; data = ""; },
+  { key = "cdown"; id = "nothing"; data = ""; },
+  { key = "cinsert"; id = "nothing"; data = ""; },
+  { key = "cdelete"; id = "nothing"; data = ""; },
+  { key = "cprior"; id = "nothing"; data = ""; },
+  { key = "cnext"; id = "nothing"; data = ""; },
+  { key = "ctab"; id = "nothing"; data = ""; },
+  # shift + ctrl
+  { key = "meta2-1;6A"; id = "key"; data = "scup"; },
+  { key = "meta2-1;6B"; id = "key"; data = "scdown"; },
+  { key = "meta2-1;6C"; id = "key"; data = "scright"; },
+  { key = "meta2-1;6D"; id = "key"; data = "scleft"; },
+  { key = "meta2-1;6H"; id = "key"; data = "schome"; },
+  { key = "meta2-2;6~"; id = "key"; data = "scinsert"; },
+  { key = "meta2-3;6~"; id = "key"; data = "scdelete"; },
+  { key = "meta2-1;6F"; id = "key"; data = "scend"; },
+  { key = "meta2-5;6~"; id = "key"; data = "scprior"; },
+  { key = "meta2-6;6~"; id = "key"; data = "scnext"; },
+  { key = "meta2-27;6;9~"; id = "key"; data = "sctab"; },
+  { key = "scup"; id = "nothing"; data = ""; },
+  { key = "scdown"; id = "nothing"; data = ""; },
+  { key = "scright"; id = "nothing"; data = ""; },
+  { key = "scleft"; id = "nothing"; data = ""; },
+  { key = "schome"; id = "nothing"; data = ""; },
+  { key = "scinsert"; id = "nothing"; data = ""; },
+  { key = "scdelete"; id = "nothing"; data = ""; },
+  { key = "scend"; id = "nothing"; data = ""; },
+  { key = "scprior"; id = "nothing"; data = ""; },
+  { key = "scnext"; id = "nothing"; data = ""; },
+  { key = "sctab"; id = "nothing"; data = ""; },
+  # meta/alt + ctrl
+  { key = "meta2-1;7A"; id = "key"; data = "mcup"; },
+  { key = "meta2-1;7B"; id = "key"; data = "mcdown"; },
+  { key = "meta2-1;7C"; id = "key"; data = "mcright"; },
+  { key = "meta2-1;7D"; id = "key"; data = "mcleft"; },
+  { key = "meta2-1;7H"; id = "key"; data = "mchome"; },
+  { key = "meta2-2;7~"; id = "key"; data = "mcinsert"; },
+  { key = "meta2-3;7~"; id = "key"; data = "mcdelete"; },
+  { key = "meta2-1;7F"; id = "key"; data = "mcend"; },
+  { key = "meta2-5;7~"; id = "key"; data = "mcprior"; },
+  { key = "meta2-6;7~"; id = "key"; data = "mcnext"; },
+  { key = "meta2-27;7;9~"; id = "key"; data = "mctab"; },
+  { key = "mcup"; id = "nothing"; data = ""; },
+  { key = "mcdown"; id = "nothing"; data = ""; },
+  { key = "mcright"; id = "nothing"; data = ""; },
+  { key = "mcleft"; id = "nothing"; data = ""; },
+  { key = "mchome"; id = "nothing"; data = ""; },
+  { key = "mcinsert"; id = "nothing"; data = ""; },
+  { key = "mcdelete"; id = "nothing"; data = ""; },
+  { key = "mcend"; id = "nothing"; data = ""; },
+  { key = "mcprior"; id = "nothing"; data = ""; },
+  { key = "mcnext"; id = "nothing"; data = ""; },
+  { key = "mctab"; id = "nothing"; data = ""; },
+  # shift + meta/alt + ctrl
+  { key = "meta2-1;8A"; id = "key"; data = "smcup"; },
+  { key = "meta2-1;8B"; id = "key"; data = "smcdown"; },
+  { key = "meta2-1;8C"; id = "key"; data = "smcright"; },
+  { key = "meta2-1;8D"; id = "key"; data = "smcleft"; },
+  { key = "meta2-1;8H"; id = "key"; data = "smchome"; },
+  { key = "meta2-2;8~"; id = "key"; data = "smcinsert"; },
+  { key = "meta2-3;8~"; id = "key"; data = "smcdelete"; },
+  { key = "meta2-1;8F"; id = "key"; data = "smcend"; },
+  { key = "meta2-5;8~"; id = "key"; data = "smcprior"; },
+  { key = "meta2-6;8~"; id = "key"; data = "smcnext"; },
+  { key = "meta2-27;8;9~"; id = "key"; data = "smctab"; },
+  { key = "smcup"; id = "nothing"; data = ""; },
+  { key = "smcdown"; id = "nothing"; data = ""; },
+  { key = "smcright"; id = "nothing"; data = ""; },
+  { key = "smcleft"; id = "nothing"; data = ""; },
+  { key = "smchome"; id = "nothing"; data = ""; },
+  { key = "smcinsert"; id = "nothing"; data = ""; },
+  { key = "smcdelete"; id = "nothing"; data = ""; },
+  { key = "smcend"; id = "nothing"; data = ""; },
+  { key = "smcprior"; id = "nothing"; data = ""; },
+  { key = "smcnext"; id = "nothing"; data = ""; },
+  { key = "smctab"; id = "nothing"; data = ""; }
+);
+# vim: ft=perl sw=2

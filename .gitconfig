@@ -1,0 +1,52 @@
+[user]
+	name = Chuck Schleutker
+	email = chuck.schleutker@gmail.com
+[advice]
+	statusHints = false
+[alias]
+	cl = clone
+	co = checkout
+	ci = commit
+	st = status -sb
+	br = branch
+	sl = !git stash list | cat
+	pick = cherry-pick
+	log1 = log --pretty=oneline --abbrev-commit
+	logg = log --pretty=oneline --abbrev-commit --graph
+	diffc = diff --cached
+	diffi = diff --ignore-all-space
+	diffic = diff --cached --ignore-all-space
+	diffci = diff --cached --ignore-all-space
+[branch]
+	autosetupmerge = true
+[color]
+	diff = false
+	pager = false
+	ui = auto
+[core]
+	editor = vim
+	pager = view -
+	excludesfile = ~/.gitignored
+[pager]
+	status = false
+[push]
+	default = matching
+[status]
+	relativePaths = true
+[diff]
+	renames = copy
+[diff "ruby"]
+	funcname = ^\\s*\\(\\(class\\|module\\|def\\|describe\\) .*\\)
+[diff "python"]
+	funcname = ^\\s*\\(\\(class\\|def\\) .*\\)
+[diff "vim"]
+	function = ^\\s*\\(function .*\\)
+[web]
+	browser = sensible-browser
+[gui]
+	fontdiff = -family \"DejaVu Sans Mono\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+	spellingdictionary = none
+	editor = gvim
+[cola]
+	fontdiff = DejaVu Sans Mono,10,-1,5,50,0,0,0,0,0
+	fontui = DejaVu Sans,11,-1,5,50,0,0,0,0,0
