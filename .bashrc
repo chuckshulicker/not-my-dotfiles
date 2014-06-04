@@ -224,6 +224,11 @@ if [[ -f ~/.bash_functions ]]; then
     source ~/.bash_functions
 fi
 
+# enable igo aliases
+if [[ -f ~/.igo_aliases ]]; then
+    source ~/.igo_aliases
+fi
+
 # enable programmable completion features
 if [[ -f /etc/bash_completion ]]; then
     source /etc/bash_completion
