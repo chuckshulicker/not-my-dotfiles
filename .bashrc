@@ -5,7 +5,7 @@
 if [[ -z ${PS1} ]]; then
     return
 fi
-# Variables {{{1
+# Variables and Path {{{1
 export EDITOR=vim
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man' -\""
 # export GREP_OPTIONS='--color=auto --line-number --binary-files=without-match'
@@ -18,7 +18,7 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 
 # macbook only
-export $PATH="$PATH:$HOME/mongodb-osx-x86_64-2.6.1/bin/:$HOME/Downloads/MacVim"
+export PATH="$PATH:$HOME/mongodb-osx-x86_64-2.6.1/bin/:$HOME/Downloads/MacVim"
 
 # Mac OS X {{{2
 if [[ ${OSTYPE} == darwin* ]]; then
@@ -39,7 +39,7 @@ if [[ ${OSTYPE} == darwin* ]]; then
 fi
 
 # History {{{2
-HISTFILE=~/.zsh_history
+HISTFILE=~/.bash_history
 SAVEHIST=10000
 HISTSIZE=10000
 # Terminal stuff {{{1
