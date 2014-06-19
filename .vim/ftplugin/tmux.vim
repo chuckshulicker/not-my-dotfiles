@@ -1,1 +1,0 @@
-setlocal comments=:# commentstring=#%s

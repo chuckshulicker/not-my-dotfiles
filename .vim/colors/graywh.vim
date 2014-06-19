@@ -68,7 +68,7 @@ hi PmenuThumb                                           gui=reverse
 hi TabLine              guifg=bg        guibg=fg        gui=none
 hi TabLineSel           guifg=fg        guibg=bg        gui=bold
 hi TabLineFill          guifg=fg        guibg=bg        gui=reverse
-hi CursorLine                           guibg=#303030
+hi CursorLine                           guibg=#2a2a2a
 hi Cursor               guifg=bg        guibg=fg
 
 " Syntax {{{2
@@ -143,7 +143,7 @@ hi PmenuThumb                                                           cterm=re
 hi TabLine              ctermfg=bg              ctermbg=fg
 hi TabLineSel                                                           cterm=bold
 hi TabLineFill                                                          cterm=reverse
-hi CursorLine                                   ctermbg=DarkGray        cterm=none
+hi CursorLine                                   ctermbg=none            cterm=none
 
 " Syntax {{{2
 hi MatchParen                                   ctermbg=DarkCyan
