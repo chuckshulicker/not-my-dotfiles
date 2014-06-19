@@ -1,6 +1,10 @@
 " <3 graywh
 syntax on
-colorscheme graywh
+if has('gui_running')
+  colorscheme graywh
+else
+  colorscheme ir_black
+end
 set nocompatible
 set clipboard=unnamed
 set nocompatible
@@ -36,7 +40,7 @@ endif
 
 if exists(':let') == 2
   let g:fit_manpages_to_window = 1
-  let g:leave_my_textwidth_alone=1
+  let g:leave_my_textwidth_alone = 1
   let g:colorchart_origin = { 88: 0, 256: 7 }
   let g:colorchart_angle = { 88: 0, 256: 4 }
   let g:colorchart_chart = { 88: "ribbon" }
@@ -51,9 +55,9 @@ if exists(':let') == 2
   let g:space_no_search = 1
   let g:space_no_jump = 1
 
-  let g:sql_type_default = 'mysql'
-
   let g:surround_indent = 1
+  " netrw-browse nav
+  let g:netrw_retmap = 1
 endif
 
 " mouse
