@@ -15,12 +15,15 @@ set tabstop=8
 set softtabstop=2
 set expandtab
 set formatoptions=cn
+set modeline                    " Let files set their own options
+set modelines&
+set fileformats=unix,mac,dos    " End-of-line character
 set wildmenu
 set wildmode=longest:full,full
-set backupdir=~/.vim/backup
-set directory=~/.vim/swap
-set undodir=~/.vim/undo
-set undolevels=1000
+set dir=~/.vim/swap//,~/.vim/undo//,/tmp//,.
+set undofile                  " Keep undo files
+set undolevels=1000           " Keep plenty of undos
+set undoreload=10000
 
 if has('autocmd') && exists(':filetype') == 2
   filetype plugin indent on
@@ -103,10 +106,10 @@ nnoremap <silent> <Up>    <C-w>k
 nnoremap <silent> <Down>  <C-w>j
 
 " buffer nav
-nnoremap <silent> <C-Left>  :bp<CR>
-nnoremap <silent> <C-Right> :bn<CR>
-nnoremap <silent> <C-Up>    :bp<CR>
-nnoremap <silent> <C-Down>  :bn<CR>
+"nnoremap <silent> <C-Left>  :bp<CR>
+"nnoremap <silent> <C-Right> :bn<CR>
+"nnoremap <silent> <C-Up>    :bp<CR>
+"nnoremap <silent> <C-Down>  :bn<CR>
 
 " command line completion
 cnoremap <expr> <C-p> wildmenumode() ? "\<C-p>" : "\<Up>"
@@ -132,13 +135,7 @@ set viminfo+=!                  " Remember some global variables
 set viminfo+=h                  " Don't restore the hlsearch highlighting
 
 " reading and writting
-set modeline                    " Let files set their own options
-set modelines&
-set fileformats=unix,mac,dos    " End-of-line character
-if exists('&undofile')
-  set undofile                  " Keep undo files
-  set undolevels=1000           " Keep plenty of undos
-endif
+
 
 " diff mode
 if exists('&diffopt')
@@ -176,6 +173,19 @@ cnoremap <Down> <C-n>
 
 " graywh functions
 if exists(':function') == 2
+
+  function Tmpwatch(path, days)
+    let l:path = expand(a:path)
+    if isdirectory(l:path)
+      for file in split(globpath(l:path, "*"), "\n")
+        if localtime() > getftime(file) + 86400 * a:days && delete(file) != 0
+          echo "Tmpwatch(): Error deleting '" . file . "'"
+        endif
+      endfor
+    else
+      echo "Tmpwatch(): Directory '" . l:path . "' not found"
+    endif
+  endfunction
 
   function! SimpleFoldText() " {{{2
     let text = getline(v:foldstart)
