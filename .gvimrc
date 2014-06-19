@@ -13,7 +13,6 @@ endif
 
 " GUI Display {{{2
 set guioptions=
-set guioptions+=a               " Automatically make visual selection available in system clipboard
 set guioptions+=A               " Same for modeless selection
 set guioptions+=c               " Use console dialogs instead of popups
 set guioptions+=e               " GUI tabs

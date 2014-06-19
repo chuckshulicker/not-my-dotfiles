@@ -41,3 +41,6 @@ fi
 if [[ -n $TMUX ]]; then
     alias Railslog="tmux neww -ad 'tail -f log/development.log'"
 fi
+
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES;'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
