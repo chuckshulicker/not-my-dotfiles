@@ -19,15 +19,15 @@ set tabstop=8
 set softtabstop=2
 set expandtab
 set formatoptions=cn
-set modeline                    " Let files set their own options
+set modeline
 set modelines&
-set fileformats=unix,mac,dos    " End-of-line character
+set fileformats=unix,mac,dos
 set wildmenu
 set wildmode=longest:full,full
 set dir=~/.vim/swap//,~/.vim/undo//,/tmp//,.
-set undofile                  " Keep undo files
-set undolevels=1000           " Keep plenty of undos
-set undoreload=10000
+set undofile
+set undolevels=100
+set undoreload=100
 
 if has('autocmd') && exists(':filetype') == 2
   filetype plugin indent on

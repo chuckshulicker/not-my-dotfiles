@@ -15,7 +15,7 @@ export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 
 # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # macbook only
 export PATH="$PATH:$HOME/mongodb-osx-x86_64-2.6.1/bin/:$HOME/Downloads/MacVim:/usr/local/Cellar/rabbitmq/3.2.1/sbin"
@@ -234,6 +234,12 @@ fi
 if [[ -f /etc/bash_completion ]]; then
     source /etc/bash_completion
 fi
+
+# enable git completion
+if [[ -f ~/.git-completion ]]; then
+    source ~/.git-completion
+fi
+
 
 # }}}1
 #

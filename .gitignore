@@ -39,3 +39,4 @@
 !/.zshenv
 !/.zshrc
 !/Rakefile
+!/.git-completion

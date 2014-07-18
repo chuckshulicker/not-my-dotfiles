@@ -1,15 +1,4 @@
-" gvimrc
-" Author: Will Gray <graywh@gmail.com>
-
-" Options {{{1
-" Font {{{2
-if has('win16') || has('win32') || has('win64')
-  set guifont=DejaVu\ Sans\ Mono\ Bold:h10
-elseif has('macunix')
-  set guifont=DejaVu\ Sans\ Mono\ Bold:h14
-else
-  set guifont=DejaVu\ Sans\ Mono\ Bold\ 10
-endif
+set guifont=Iconsolata:h14
 
 " GUI Display {{{2
 set guioptions=
@@ -23,7 +12,6 @@ set guioptions+=t               " Tear-off menus
 set guioptions+=v               " Use a vertical layout for gui dialogs
 set guicursor+=a:blinkon0       " Don't blink the cursor
 set mousehide                   " Hide the mouse while typing
-set noantialias                 " Don't anti-alias fonts?
 set columns=85                  " 80 + numberwidth + foldcolumn
 set lines=40
 set vb t_vb=                    " Disable visual and audible bell
