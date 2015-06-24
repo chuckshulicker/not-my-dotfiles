@@ -44,3 +44,5 @@ fi
 
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES;'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+alias compose='docker-compose'
+alias fig='docker-compose'
