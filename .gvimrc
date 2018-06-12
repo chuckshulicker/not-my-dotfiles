@@ -1,4 +1,4 @@
-set guifont=Iconsolata:h14
+set guifont=Monospace
 
 " GUI Display {{{2
 set guioptions=
@@ -44,3 +44,6 @@ nmap <X1Mouse> <C-O>
 " Hold shift for horizontal scrolling {{{2
 noremap <S-ScrollWheelUp> <ScrollWheelLeft>
 noremap <S-ScrollWheelDown> <ScrollWheelRight>
+
+autocmd FileType javascript set formatprg=prettier\ --stdin
+autocmd BufWritePre *.js :normal gggqG

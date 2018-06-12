@@ -16,3 +16,5 @@ if [[ -f ~/.bashrc ]]; then
 fi
 
 # vim: fdm=marker
+
+[ -s "/home/jcs/.nvm/nvm.sh" ] && . "/home/jcs/.nvm/nvm.sh" # This loads nvm

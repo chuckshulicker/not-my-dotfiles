@@ -87,16 +87,21 @@ set viminfo+=h                  " Don't restore the hlsearch highlighting
 
 " vundle
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'bling/vim-airline'
+"Plugin 'VundleVim/Vundle.vim'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'bling/vim-airline'
 " Plugin 'spolu/dwm.vim'
 " Plugin 'roman/golden-ratio'
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+"call vundle#end()            " required
 let g:airline#extensions#tabline#enabled = 1
 let g:ctrlp_cmd = 'E'
+
+" autocmd FileType javascript
+" set formatprg=prettier\ --stdin
+" autocmd BufWritePre *.js :normal gggqG
+

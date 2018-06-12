@@ -18,7 +18,7 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # macbook only
-export PATH="$PATH:$HOME/mongodb/bin:$HOME/Downloads/MacVim:/usr/local/Cellar/rabbitmq/3.2.1/sbin:export:$(brew --prefix)/bin"
+# export PATH="$PATH:$HOME/mongodb/bin:$HOME/Downloads/MacVim:/usr/local/Cellar/rabbitmq/3.2.1/sbin:export:$(brew --prefix)/bin"
 # ln -sfv /usr/local/opt/rabbitmq/*.plist ~/Library/LaunchAgents
 
 # Mac OS X {{{2
@@ -240,6 +240,7 @@ if [[ -f ~/.git-completion ]]; then
     source ~/.git-completion
 fi
 
+source ~/.nvm/nvm.sh
 
 # }}}1
 #
@@ -250,3 +251,5 @@ export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
 export DOCKER_HOST=tcp://127.0.0.1:2376
 export COMPOSE_PROJECT_NAME=cobaltstarfish
+export DISPLAY=:0
+
