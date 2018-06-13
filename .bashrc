@@ -253,3 +253,9 @@ export DOCKER_HOST=tcp://127.0.0.1:2376
 export COMPOSE_PROJECT_NAME=cobaltstarfish
 export DISPLAY=:0
 
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+# Install Ruby Gems to ~/gems
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
