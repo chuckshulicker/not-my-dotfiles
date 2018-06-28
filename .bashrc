@@ -18,7 +18,7 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # macbook only
-export PATH="$PATH:$HOME/mongodb/bin:$HOME/Downloads/MacVim:/usr/local/Cellar/rabbitmq/3.2.1/sbin:export:$(brew --prefix)/bin"
+export PATH="$PATH:$HOME/mongodb/bin:/Applications/MacVim.app/Contents/bin:/usr/local/Cellar/rabbitmq/3.2.1/sbin:export:$(brew --prefix)/bin"
 # ln -sfv /usr/local/opt/rabbitmq/*.plist ~/Library/LaunchAgents
 
 # Mac OS X {{{2
