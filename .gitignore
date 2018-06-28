@@ -43,3 +43,10 @@
 !/.git-completion
 !/Pro.terminal
 !/.atom
+!/.vim/bundle/vim-airline
+!/.atom/.apm
+!/.atom/.node-gyp
+!/.atom/blob-store
+!/.atom/compile-cache
+!/.atom/packages
+!/.atom/storage
