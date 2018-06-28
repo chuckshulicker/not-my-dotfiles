@@ -1,0 +1,33 @@
+"*":
+  "atom-clock":
+    showUTC: true
+  core:
+    disabledPackages: [
+      "sync-settings"
+      "Sublime-Style-Column-Selection"
+      "atom-transpose"
+      "autoclose-html"
+      "case-keep-replace"
+      "change-case"
+      "duplicate-line-or-selection"
+      "ex-mode"
+      "vim-mode-plus"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
+  editor:
+    fontSize: 13
+  "exception-reporting":
+    userId: "7167d68a-4de7-4b7f-9a5e-002b1c5c4a0f"
+  linter: {}
+  "linter-ui-default":
+    panelHeight: 233.1428985595703
+    showPanel: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  "vim-mode": {}
+  welcome:
+    showOnStartup: false
