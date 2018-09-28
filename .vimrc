@@ -3,7 +3,8 @@ syntax on
 if has('gui_running')
   colorscheme graywh
 else
-  colorscheme ir_black
+  colorscheme graywh
+  " colorscheme ir_black
 end
 set nocompatible
 set clipboard=unnamed

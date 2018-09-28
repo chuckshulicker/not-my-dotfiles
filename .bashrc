@@ -13,12 +13,12 @@ export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man' -\""
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
-
+export XDG_CONFIG_HOME="$HOME/.config"
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # macbook only
-export PATH="$PATH:$HOME/mongodb/bin:/Applications/MacVim.app/Contents/bin:/usr/local/Cellar/rabbitmq/3.2.1/sbin:export:$(brew --prefix)/bin"
+export PATH="$PATH:$HOME/mongodb/bin:/Applications/MacVim.app/Contents/bin:/usr/local/Cellar/rabbitmq/3.2.1/sbin:export:$(brew --prefix)/bin:$HOME/nvim-osx64/bin"
 # ln -sfv /usr/local/opt/rabbitmq/*.plist ~/Library/LaunchAgents
 
 # Mac OS X {{{2
@@ -225,6 +225,10 @@ if [[ -f ~/.bash_functions ]]; then
     source ~/.bash_functions
 fi
 
+if [[ -f ~/.api-tokens ]]; then
+    source ~/.api-tokens
+fi
+
 # enable igo aliases
 if [[ -f ~/.igo_aliases ]]; then
     source ~/.igo_aliases
@@ -250,3 +254,9 @@ export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
 export DOCKER_HOST=tcp://127.0.0.1:2376
 export COMPOSE_PROJECT_NAME=cobaltstarfish
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false         # For VS Code
+defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false # For VS Code Insider
