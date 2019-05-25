@@ -1,11 +1,6 @@
 " <3 graywh
 syntax on
-if has('gui_running')
-  colorscheme graywh
-else
-  colorscheme graywh
-  " colorscheme ir_black
-end
+colorscheme ir_black "or graywh
 set nocompatible
 set clipboard=unnamed
 set nocompatible
@@ -61,9 +56,24 @@ nnoremap <silent> <Left>  <C-w>h
 nnoremap <silent> <Right> <C-w>l
 nnoremap <silent> <Up>    <C-w>k
 nnoremap <silent> <Down>  <C-w>j
+" nnoremap <C-p> :CtrlP<CR>
+
+if has("gui_vimr")
+  nnoremap <silent><D-S-{> gT
+  nnoremap <silent><D-S-}> gt
+  nnoremap <silent><D-S><Right> :bnext<CR>
+  nnoremap <silent><D-S><Left> :bprevious<CR>
+  "nnoremap <D-h>  :bfirst<CR>
+  "nnoremap <D-k>  :bnext<CR>
+  "nnoremap <D-j>  :bprevious<CR>
+  "nnoremap <D-l>  :blast<CR>
+  "nnoremap <D-e>  :e<Space>
+  "nnoremap <D-E>  :enew<CR>
+endif
 
 " remove white space on save
 autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre *.js exe "normal! gggqG\<C-o>\<C-o>"
 
 " diff mode
 if exists('&diffopt')
@@ -95,9 +105,51 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree'
+Plugin 'prettier/vim-prettier'
+" Plugin 'sbdchd/neoformat'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'isRuslan/vim-es6'
+Plugin 'pangloss/vim-javascript'
+" Plugin 'w0rp/ale'
 " Plugin 'spolu/dwm.vim'
 " Plugin 'roman/golden-ratio'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+" SnipMate shit required by vim-es6
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+call vundle#end()
+
 let g:airline#extensions#tabline#enabled = 1
 let g:ctrlp_cmd = 'E'
+" let b:ale_fix_on_save = 1
+" let b:ale_fixers = ['remove_trailing_lines', 'trim_whitespace', 'eslint']
+"
+" CtrlP ignore
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+" eslint syntastic stuff
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+" prettier
+" autocmd BufWritePre *.js Neoformat
+" autocmd BufWritePre,TextChanged,InsertLeave *.js Neoformat
+" more prettier
+" when running at every change you may want to disable quickfix
+let g:prettier#autoformat = 1
+let g:prettier#quickfix_enabled = 0
+let g:prettier#exec_cmd_async = 1
+" autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+" vim-javascript
+" https://vimawesome.com/plugin/vim-javascript
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+
+

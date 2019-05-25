@@ -18,9 +18,11 @@ export XDG_CONFIG_HOME="$HOME/.config"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # macbook only
-export PATH="$PATH:$HOME/mongodb/bin:/Applications/MacVim.app/Contents/bin:/usr/local/Cellar/rabbitmq/3.2.1/sbin:export:$(brew --prefix)/bin:$HOME/nvim-osx64/bin"
+export PATH="$PATH:$HOME/mongodb/bin:/Applications/MacVim.app/Contents/bin:/usr/local/Cellar/rabbitmq/3.2.1/sbin:export:$(brew --prefix)/bin:$HOME/nvim-osx64/bin:/Users/jcs/.rvm/gems/ruby-2.1.1/bin:/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages:/Users/jcs/Library/Python/2.7/bin"
+# :~/.npm-global/bin
 # ln -sfv /usr/local/opt/rabbitmq/*.plist ~/Library/LaunchAgents
 
+export PIP_PATH="/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages"
 # Mac OS X {{{2
 if [[ ${OSTYPE} == darwin* ]]; then
     # turn on colors
@@ -250,13 +252,25 @@ fi
 # vim: fdm=marker fen
 
 # docker
-export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-export DOCKER_HOST=tcp://127.0.0.1:2376
-export COMPOSE_PROJECT_NAME=cobaltstarfish
+# export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
+# export DOCKER_TLS_VERIFY=1
+# export DOCKER_HOST=tcp://127.0.0.1:2376
+# export COMPOSE_PROJECT_NAME=cobaltstarfish
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false         # For VS Code
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false # For VS Code Insider
+export npm_config_predevelop="caddy -conf ../Caddyfile2"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /Users/jcs/node_modules/tabtab/.completions/serverless.bash ] && . /Users/jcs/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /Users/jcs/node_modules/tabtab/.completions/sls.bash ] && . /Users/jcs/node_modules/tabtab/.completions/sls.bash
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[ -f /Users/jcs/node_modules/tabtab/.completions/slss.bash ] && . /Users/jcs/node_modules/tabtab/.completions/slss.bash
+export TMPDIR=/private/private/var/folders/q3/qbm50nfd1wvgcb8m8phjymbr0000gn/T/
