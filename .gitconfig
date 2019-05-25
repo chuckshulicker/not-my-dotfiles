@@ -1,6 +1,6 @@
 [user]
 	name = Schleutker, Chuck
-	email = cschleutker@fusionalliance.com
+	email = chuck.schleutker@gmail.com
 [advice]
 	statusHints = false
 [alias]
@@ -52,7 +52,7 @@
 	fontui = DejaVu Sans,11,-1,5,50,0,0,0,0,0
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
