@@ -166,9 +166,9 @@ statusbar = {
 };
 settings = {
   core = {
-    real_name = "Will Gray";
-    user_name = "graywh";
-    nick = "graywh";
+    real_name = "jcs";
+    user_name = "asdfqwer";
+    nick = "asdfqwer";
     timestamp_format = "%H:%M";
     log_timestamp = "%H:%M:%S ";
   };
