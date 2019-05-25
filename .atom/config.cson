@@ -10,24 +10,51 @@
       "case-keep-replace"
       "change-case"
       "duplicate-line-or-selection"
-      "ex-mode"
-      "vim-mode-plus"
+      "atom-beautify"
+      "editorconfig"
+      "linter-sass-lint"
+      "linter-tidy"
+      "linter-csslint"
+      "multi-cursor"
+      "es6-javascript"
     ]
     telemetryConsent: "no"
     themes: [
-      "atom-dark-ui"
+      "one-dark-ui"
       "atom-dark-syntax"
     ]
   editor:
-    fontSize: 13
+    fontSize: 12
+    scrollPastEnd: true
   "exception-reporting":
     userId: "7167d68a-4de7-4b7f-9a5e-002b1c5c4a0f"
   linter: {}
   "linter-ui-default":
     panelHeight: 233.1428985595703
-    showPanel: true
+  "prettier-atom":
+    formatOnSaveOptions:
+      isDisabledIfNoConfigFile: true
+      isDisabledIfNotInPackageJson: true
+      respectEslintignore: false
+      showInStatusBar: true
+    prettierEslintOptions: {}
+    useEslint: true
   "tree-view":
-    hideVcsIgnoredFiles: true
+    hideIgnoredNames: true
   "vim-mode": {}
   welcome:
     showOnStartup: false
+core:
+  ignoredNames: [
+    ".git"
+    ".svn"
+    ".DS_Store"
+  ]
+"exception-reporting":
+  userId: "750db657-913b-52ea-512d-dea57c560caf"
+metrics:
+  userId: "6d7958e72f635b2868a2e1b862219e92281e2fb7"
+"release-notes":
+  viewedVersion: "0.69.0"
+welcome:
+  showOnStartup: false
