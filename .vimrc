@@ -18,7 +18,7 @@ set formatoptions=cn
 set fileformats=unix,mac,dos
 set wildmenu
 set wildmode=longest:full,full
-set dir=~/.vim/swap//,~/.vim/undo//,/tmp//,.
+" set dir=~/.vim/swap//,~/.vim/undo//,/tmp//,.
 set undofile
 set undolevels=100
 set undoreload=100

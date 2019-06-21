@@ -18,7 +18,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # macbook only
-export PATH="$PATH:$HOME/mongodb/bin:/Applications/MacVim.app/Contents/bin:/usr/local/Cellar/rabbitmq/3.2.1/sbin:export:$(brew --prefix)/bin:$HOME/nvim-osx64/bin:/Users/jcs/.rvm/gems/ruby-2.1.1/bin:/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages:/Users/jcs/Library/Python/2.7/bin"
+export PATH="$PATH:$HOME/mongodb/bin:/Applications/MacVim.app/Contents/bin:/usr/local/Cellar/rabbitmq/3.2.1/sbin:export:$(brew --prefix)/bin:$HOME/nvim-osx64/bin:/Users/jcs/.rvm/gems/ruby-2.1.1/bin:/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages:/Users/jcs/Library/Python/2.7/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin"
 # :~/.npm-global/bin
 # ln -sfv /usr/local/opt/rabbitmq/*.plist ~/Library/LaunchAgents
 

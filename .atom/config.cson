@@ -24,13 +24,12 @@
       "atom-dark-syntax"
     ]
   editor:
-    fontSize: 11
     scrollPastEnd: true
   "exception-reporting":
     userId: "7167d68a-4de7-4b7f-9a5e-002b1c5c4a0f"
   linter: {}
   "linter-ui-default":
-    panelHeight: 233.1428985595703
+    panelHeight: 227
   "prettier-atom":
     formatOnSaveOptions:
       isDisabledIfNoConfigFile: true
