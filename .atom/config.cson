@@ -13,7 +13,6 @@
       "atom-beautify"
       "editorconfig"
       "linter-sass-lint"
-      "linter-tidy"
       "linter-csslint"
       "multi-cursor"
       "es6-javascript"
@@ -24,12 +23,13 @@
       "atom-dark-syntax"
     ]
   editor:
+    fontSize: 12
     scrollPastEnd: true
   "exception-reporting":
     userId: "7167d68a-4de7-4b7f-9a5e-002b1c5c4a0f"
   linter: {}
   "linter-ui-default":
-    panelHeight: 227
+    panelHeight: 300
   "prettier-atom":
     formatOnSaveOptions:
       isDisabledIfNoConfigFile: true
