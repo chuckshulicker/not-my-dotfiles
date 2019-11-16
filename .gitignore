@@ -44,3 +44,4 @@
 !/Pro.terminal
 !/.vim/bundle/vim-airline
 !/.atom/config.cson
+!/.atom/packages-list.txt
