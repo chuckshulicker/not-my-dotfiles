@@ -11,21 +11,31 @@
       "case-keep-replace"
       "change-case"
       "duplicate-line-or-selection"
-      "atom-beautify"
       "editorconfig"
-      "linter-sass-lint"
-      "linter-csslint"
       "multi-cursor"
       "es6-javascript"
+      "react"
+      "terminal-plus"
+      "atom-ide-debugger-node"
+      "atom-ide-debugger-python"
+      "atom-ide-ui"
+      "ide-bash"
+      "ide-json"
+      "ide-python"
+      "ide-yaml"
+      "linter-csslint"
+      "Hydrogen"
+      "hydrogen-launcher"
+      "hydrogen-python"
     ]
     telemetryConsent: "no"
     themes: [
-      "one-dark-ui"
-      "atom-dark-syntax"
+      "black-corail-ui"
+      "ir-black-k-syntax"
     ]
     uriHandlerRegistration: "always"
   editor:
-    fontSize: 12
+    fontSize: 13
     scrollPastEnd: true
   "exception-reporting":
     userId: "7167d68a-4de7-4b7f-9a5e-002b1c5c4a0f"
@@ -41,6 +51,10 @@
       showInStatusBar: true
     prettierEslintOptions: {}
     useEslint: true
+  "terminal-plus":
+    core: {}
+    style:
+      theme: "pro"
   "tree-view":
     hideIgnoredNames: true
   "vim-mode": {}
