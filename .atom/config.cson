@@ -1,6 +1,7 @@
 "*":
   "atom-clock":
     showUTC: true
+  "atom-terminal": {}
   core:
     disabledPackages: [
       "sync-settings"
@@ -23,14 +24,16 @@
       "one-dark-ui"
       "atom-dark-syntax"
     ]
+    uriHandlerRegistration: "always"
   editor:
-    fontSize: 11
+    fontSize: 12
     scrollPastEnd: true
   "exception-reporting":
     userId: "7167d68a-4de7-4b7f-9a5e-002b1c5c4a0f"
   linter: {}
   "linter-ui-default":
     panelHeight: 233.1428985595703
+    showPanel: true
   "prettier-atom":
     formatOnSaveOptions:
       isDisabledIfNoConfigFile: true
@@ -42,6 +45,8 @@
   "tree-view":
     hideIgnoredNames: true
   "vim-mode": {}
+  "vim-mode-plus":
+    useClipboardAsDefaultRegister: true
   welcome:
     showOnStartup: false
 core:
