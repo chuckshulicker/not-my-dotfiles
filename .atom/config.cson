@@ -34,17 +34,23 @@
       "ir-black-k-syntax"
     ]
     uriHandlerRegistration: "always"
+    useTreeSitterParsers: false
   editor:
     fontSize: 13
     scrollPastEnd: true
   "exception-reporting":
     userId: "7167d68a-4de7-4b7f-9a5e-002b1c5c4a0f"
+  gist:
+    token: "b158678ac60c921d45424b53d41dce1e8459a8ee"
+  kite:
+    showWelcomeNotificationOnStartup: false
   linter: {}
   "linter-ui-default":
     panelHeight: 233.1428985595703
     showPanel: true
   "prettier-atom":
     formatOnSaveOptions:
+      enabled: true
       isDisabledIfNoConfigFile: true
       isDisabledIfNotInPackageJson: true
       respectEslintignore: false
@@ -57,6 +63,7 @@
       theme: "pro"
   "tree-view":
     hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
   "vim-mode": {}
   "vim-mode-plus":
     useClipboardAsDefaultRegister: true

@@ -1,6 +1,6 @@
 " <3 graywh
 syntax on
-colorscheme ir_black "or graywh
+colorscheme graywh "or ir_black
 set nocompatible
 set clipboard=unnamed
 set nocompatible

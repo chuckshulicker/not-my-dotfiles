@@ -17,6 +17,19 @@
 #   'ctrl-shift-p': 'core:move-up'
 #   'ctrl-p': 'core:move-down'
 #
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  # pane/window creation
+  'ctrl-w n': 'pane:split-down-and-copy-active-item'
+  'ctrl-w k': 'pane:split-right-and-copy-active-item'
+  'ctrl-w v': 'pane:split-up-and-copy-active-item'
+  'ctrl-w d': 'pane:split-left-and-copy-active-item'
+
+  # window navigation
+  'left': 'window:focus-pane-on-left'
+  'right': 'window:focus-pane-on-right'
+  'up': 'window:focus-pane-above'
+  'down': 'window:focus-pane-below'
+
 # You can find more information about keymaps in these guides:
 # * http://flight-manual.atom.io/using-atom/sections/basic-customization/#customizing-keybindings
 # * http://flight-manual.atom.io/behind-atom/sections/keymaps-in-depth/
