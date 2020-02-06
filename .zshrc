@@ -299,3 +299,5 @@ fi
 
 # }}}1
 # vim: fdm=marker fen
+
+export PATH="$HOME/.bin:$PATH"

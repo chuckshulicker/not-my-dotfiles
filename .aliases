@@ -48,3 +48,5 @@ alias compose='docker-compose'
 alias fig='docker-compose'
 alias git_detach_then_fetch="git co --detach && git fetch origin '+refs/heads/*:refs/heads/*'"
 alias BluetoothRestart='sudo kextunload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport && sudo kextload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport'
+
+source $HOME/.aliases-mathias
