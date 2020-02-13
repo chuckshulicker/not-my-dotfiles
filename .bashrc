@@ -267,11 +267,11 @@ export npm_config_predevelop="caddy -conf ../Caddyfile2"
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /Users/jcs/node_modules/tabtab/.completions/serverless.bash ] && . /Users/jcs/node_modules/tabtab/.completions/serverless.bash
+#[ -f /Users/jcs/node_modules/tabtab/.completions/serverless.bash ] && . /Users/jcs/node_modules/tabtab/.completions/serverless.bash
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /Users/jcs/node_modules/tabtab/.completions/sls.bash ] && . /Users/jcs/node_modules/tabtab/.completions/sls.bash
+#[ -f /Users/jcs/node_modules/tabtab/.completions/sls.bash ] && . /Users/jcs/node_modules/tabtab/.completions/sls.bash
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
-[ -f /Users/jcs/node_modules/tabtab/.completions/slss.bash ] && . /Users/jcs/node_modules/tabtab/.completions/slss.bash
-export TMPDIR=/private/private/var/folders/q3/qbm50nfd1wvgcb8m8phjymbr0000gn/T/
+#[ -f /Users/jcs/node_modules/tabtab/.completions/slss.bash ] && . /Users/jcs/node_modules/tabtab/.completions/slss.bash
+#export TMPDIR=/private/private/var/folders/q3/qbm50nfd1wvgcb8m8phjymbr0000gn/T/

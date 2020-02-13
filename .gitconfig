@@ -21,11 +21,11 @@
 	autosetupmerge = true
 [color]
 	diff = false
-	pager = false
+        # pager = false
 	ui = auto
 [core]
 	editor = vim
-	pager = view -
+        # pager = view -
 	excludesfile = ~/.gitignore_global
 [pager]
 	status = false

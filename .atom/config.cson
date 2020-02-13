@@ -14,19 +14,29 @@
       "editorconfig"
       "multi-cursor"
       "es6-javascript"
-      "react"
       "terminal-plus"
       "atom-ide-debugger-node"
       "atom-ide-debugger-python"
       "atom-ide-ui"
-      "ide-bash"
       "ide-json"
-      "ide-python"
       "ide-yaml"
       "linter-csslint"
       "Hydrogen"
       "hydrogen-launcher"
-      "hydrogen-python"
+      "vim-surround"
+      "atom-react"
+      "vim-mode-visual-block"
+      "vim-mode-plus-ex-mode"
+      "nvim-mode"
+      "move-cursor-improved"
+      "vim-mode-clipboard-plus"
+      "vim-mode-plus-duplicate"
+      "vim-mode-plus-exchange"
+      "vim-mode-plus-keymaps-for-tree-view"
+      "vim-mode-zz"
+      "vim-mode-plus-replace-with-execution"
+      "vim-mode-plus-move-selected-text"
+      "vim-mode-plus-macros"
     ]
     telemetryConsent: "no"
     themes: [
@@ -36,7 +46,7 @@
     uriHandlerRegistration: "always"
     useTreeSitterParsers: false
   editor:
-    fontSize: 13
+    fontSize: 12
     scrollPastEnd: true
   "exception-reporting":
     userId: "7167d68a-4de7-4b7f-9a5e-002b1c5c4a0f"
@@ -47,7 +57,6 @@
   linter: {}
   "linter-ui-default":
     panelHeight: 233.1428985595703
-    showPanel: true
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true

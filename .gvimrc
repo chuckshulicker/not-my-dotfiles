@@ -1,4 +1,5 @@
 set guifont=Iconsolata:h14
+colorscheme ir_black
 
 " GUI Display {{{2
 set guioptions=
