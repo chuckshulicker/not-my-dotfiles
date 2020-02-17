@@ -16,9 +16,9 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 export XDG_CONFIG_HOME="$HOME/.config"
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 # macbook only
-export PATH="$PATH:$HOME/mongodb/bin:/Applications/MacVim.app/Contents/bin:/usr/local/Cellar/rabbitmq/3.2.1/sbin:export:$(brew --prefix)/bin:$HOME/nvim-osx64/bin:/Users/jcs/.rvm/gems/ruby-2.1.1/bin:/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages:/Users/jcs/Library/Python/2.7/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:$HOME/redis-stable/src/redis-server:$HOME/redis-stable/src/redis-cli:/Users/jcs/.rvm/gems/ruby-2.1.1/bin:$HOME/coding-configs/bin"
+export PATH="$PATH:$HOME/mongodb/bin:/Applications/MacVim.app/Contents/bin:/usr/local/Cellar/rabbitmq/3.2.1/sbin:export:$(brew --prefix)/bin:$HOME/nvim-osx64/bin:/Users/jcs/.rvm/gems/ruby-2.1.1/bin:/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages:/Users/jcs/Library/Python/2.7/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:$HOME/redis-stable/src/redis-server:$HOME/redis-stable/src/redis-cli:/Users/jcs/.rvm/gems/ruby-2.1.1/bin:$HOME/coding-configs/bin:${JAVA_HOME}"
 export TCL_PATH="/usr/local/bin"
 # :~/.npm-global/bin
 # ln -sfv /usr/local/opt/rabbitmq/*.plist ~/Library/LaunchAgents

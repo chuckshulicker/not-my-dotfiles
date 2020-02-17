@@ -56,7 +56,7 @@ nnoremap <silent> <Left>  <C-w>h
 nnoremap <silent> <Right> <C-w>l
 nnoremap <silent> <Up>    <C-w>k
 nnoremap <silent> <Down>  <C-w>j
-nnoremap <C-p> :CtrlP<CR>
+nnoremap <silent> <C-p> :CtrlPCurWD<CR>
 
 if has("gui_vimr")
   nnoremap <silent><D-S-{> gT
