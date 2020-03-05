@@ -52,4 +52,4 @@ alias BluetoothRestart='sudo kextunload -b com.apple.iokit.BroadcomBluetoothHost
 source $HOME/.aliases-mathias
 alias xargs_link_pkg="xargs -n 1 -I % sh -c 'cd packages/% && yarn link && cd -; yarn link @120wateraudit/%; yarn;'"
 alias xargs_run_workspace="xargs -n 1 -t yarn workspace @120wateraudit/envirodb run"
-
+alias VimR='open -a VimR.app "$@"'
