@@ -314,6 +314,7 @@ cdnvm(){
     fi
 }
 alias cd='cdnvm'
+nvm use
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 #[ -f /Users/jcs/node_modules/tabtab/.completions/serverless.bash ] && . /Users/jcs/node_modules/tabtab/.completions/serverless.bash
